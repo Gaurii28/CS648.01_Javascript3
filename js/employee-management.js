@@ -53,14 +53,12 @@ function delItem(e) {
 
 var clickAdd = function () {
     "use strict";
-    var header, html, required, msg, name, title, extension, contact, terms;
+    var name, title, extension;
     
-    header = "";
-    html = "";
     name = $("name").value;
     title = $("title").value;
     extension = $("extension").value;
-    contact = "Text";
+    
     var flag= true;
     function validate(){
         if (name === "") {
