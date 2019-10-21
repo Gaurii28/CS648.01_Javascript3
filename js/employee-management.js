@@ -51,7 +51,7 @@ function delItem(e) {
     table();
   }
 
-var processEntries = function () {
+var clickAdd = function () {
     "use strict";
     var header, html, required, msg, name, title, extension, contact, terms;
     
@@ -94,6 +94,6 @@ var processEntries = function () {
 window.addEventListener("load", function () {
     "use strict";
     table();
-    $("add").addEventListener("click",processEntries);
+    $("add").addEventListener("click",clickAdd);
     $("form1").reset();
   });
