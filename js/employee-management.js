@@ -6,7 +6,7 @@ var $ = function (id) {
 }
 
 function table() {
-  var table = $("employee_info");
+  var table = $("einfo");
 
   while (table.rows.length > 1) {
     table.deleteRow(1);
@@ -19,16 +19,13 @@ function table() {
       var newCell = table.rows[table.rows.length - 1].insertCell();
       newCell.textContent = cell;
     }
-    var deleteCell = table.rows[table.rows.length - 1].insertCell();
+    var dCell = table.rows[table.rows.length - 1].insertCell();
     var button = document.createElement("input");
     button.type = "button";
     button.value = "Delete";
     button.id= element[2];
-    // button.addEventListener('click', function () {
-    //     deleteItem(element);
-    //   });
-    deleteCell.appendChild(button);
-    deleteCell.id = "delete";
+    dCell.appendChild(button);
+    dCell.id = "delete";
   }
   for (let index = 0; index < employee_list.length; index++) {
       $(employee_list[index][2]).addEventListener("click",deleteItem);
