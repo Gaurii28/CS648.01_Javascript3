@@ -1,4 +1,4 @@
-var employee_list = [["Swati", "CEO", "001"], ["Pooja", "CFO", "002"], ["Yash", "Manager", "003"], ["Kashish", "Vice President", "004"], ["Chintan", "Associate", "005"]];
+var employee_list = [["Shital", "CEO", "001"], ["kinjal", "CFO", "002"], ["shilpa", "Manager", "003"], ["rajesh", "Vice President", "004"], ["animesh", "Associate", "005"]];
 
 var $ = function (id) {
   "use strict";
@@ -38,7 +38,7 @@ function addItem(e) {
     table();
   }
 function updateEmployeeCount() {
-    $("employeeCount").innerHTML = employee_list.length;
+    $("eCount").innerHTML = employee_list.length;
 }
 function deleteItem(e) {
     var h2 = e.currentTarget;
