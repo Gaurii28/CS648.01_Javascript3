@@ -26,7 +26,7 @@ function table() {
         deleteItem(element);
       });
     deleteCell.appendChild(button);
-    deleteCell.className = "deleteCell";
+    deleteCell.id = "delete";
     
 
   }
