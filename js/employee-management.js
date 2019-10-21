@@ -1,9 +1,10 @@
-var employee_list = [["Kashish", "President", "10"], ["Chintan", "Director", "02"], ["Yash", "Manager", "05"], ["Harsh", "Vice President", "11"], ["Shivam", "Associate", "12"], ["Pritesh", "Associate", "13"]]
+var employee_list = [["Swati", "CEO", "001"], ["Pooja", "CFO", "002"], ["Yash", "Manager", "003"], ["Kashish", "Vice President", "004"], ["Chintan", "Associate", "005"]];
 
 var $ = function (id) {
   "use strict";
   return document.getElementById(id);
 }
+
 function table() {
   var table = $("employee_info");
 
@@ -22,15 +23,17 @@ function table() {
     var button = document.createElement("input");
     button.type = "button";
     button.value = "Delete";
-    button.addEventListener('click', function () {
-        deleteItem(element);
-      });
+    button.id= element[2];
+    // button.addEventListener('click', function () {
+    //     deleteItem(element);
+    //   });
     deleteCell.appendChild(button);
     deleteCell.id = "delete";
-    
-
   }
-  
+  for (let index = 0; index < employee_list.length; index++) {
+      $(employee_list[index][2]).addEventListener("click",deleteItem);
+      
+  }
   updateEmployeeCount();
 }
 function addItem(e) {
@@ -41,8 +44,13 @@ function updateEmployeeCount() {
     $("employeeCount").innerHTML = employee_list.length;
 }
 function deleteItem(e) {
-    var index = employee_list.indexOf(e);
-    employee_list.splice(index, 1);
+    var h2 = e.currentTarget;
+    for (let index = 0; index < employee_list.length; index++) {
+      if (employee_list[index][2] == h2.id) {
+        employee_list.splice(index, 1);
+        break;
+      }
+    }
     table();
   }
 
