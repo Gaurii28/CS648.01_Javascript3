@@ -28,19 +28,19 @@ function table() {
     dCell.id = "delete";
   }
   for (let index = 0; index < employee_list.length; index++) {
-      $(employee_list[index][2]).addEventListener("click",deleteItem);
+      $(employee_list[index][2]).addEventListener("click",delItem);
       
   }
-  updateEmployeeCount();
+  eCount();
 }
 function addItem(e) {
     employee_list.push(e);
     table();
   }
-function updateEmployeeCount() {
+function eCount() {
     $("eCount").innerHTML = employee_list.length;
 }
-function deleteItem(e) {
+function delItem(e) {
     var h2 = e.currentTarget;
     for (let index = 0; index < employee_list.length; index++) {
       if (employee_list[index][2] == h2.id) {
